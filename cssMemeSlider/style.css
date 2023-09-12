@@ -32,8 +32,10 @@ p {
     width: 400%;
     height: 100%;
     display: flex;
+    transition: 1s;
 }
 .slide {
+    width: 100%;
     display: flex;
     margin-top: 40px;
     margin-left: auto;
@@ -46,7 +48,7 @@ p {
     width: 100%;
     height: 100%;
 }
-.wrapper-all > input {
+.wrapper-all input {
     display: none;
 }
 .slider-footer {
@@ -90,12 +92,22 @@ p {
     opacity: 0.8;
     transform: scale(1.2);
 }
-#slide1:checked ~ .slide1 {
-    
+.input:checked {
+    opacity: 0.8;
+    transform: scale(1.2); 
 }
-
-
-
+#dot1:checked ~ .slider {
+    margin-left: 0;
+}
+#dot2:checked ~ .slider {
+    margin-left: -100%;
+}
+#dot3:checked ~ .slider {
+    margin-left: -200%;
+}
+#dot4:checked ~ .slider {
+    margin-left: -300%;
+}
 
 
 
