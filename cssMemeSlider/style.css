@@ -27,18 +27,21 @@ p {
 .header {
     display: none;
 }
-
+.wrapper-all {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 .slider {
     width: 400%;
     height: 100%;
     display: flex;
     transition: 1s;
 }
-
 .slide {
     width: 100%;
     display: flex;
-    margin-top: 4%;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10%;
@@ -54,15 +57,11 @@ input[name="dot"] {
 }
 .slider-footer {
     display: flex;
-    margin: 5%;
     justify-content: space-between;
 }
 .text-carousel {
-    margin-top: 2%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 70%;
+    align-items: center; 
 }
 .text {
     color: white;
@@ -71,15 +70,12 @@ input[name="dot"] {
     font-style: normal;
     font-weight: 300;
     letter-spacing: 0em;
-    align-items: center; 
-    opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 .controls {
-    width: 28%;
+    width: fit-content;
     height: 5%;
     margin-right: 0;
-    margin-left: auto;
     display: inline-flex;
     flex-wrap: nowrap;
 }
@@ -120,41 +116,44 @@ input[name="dot"] {
     margin-left: -300%;
 }
 #dot1:checked ~ .slider-footer .text-carousel .text1 {
-    opacity: 1;
-    visibility: visible;
+display: flex;
 }
 #dot2:checked ~ .slider-footer .text-carousel .text2,
 #dot3:checked ~ .slider-footer .text-carousel .text3,
 #dot4:checked ~ .slider-footer .text-carousel .text4 {
-    order: -1;
-    opacity: 1;
-    visibility: visible;
+    display: flex;
 }
 @media (max-width: 850px) {
 .slide {
     width: 100%;
     margin-top: 2%;
 }
+.wrapper-all {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 .slider-footer {
+    margin: 0;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
+    gap: 2rem;
 }
 .text-carousel {
     order: 1;
-    margin-top: 0em;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 0.7em;
+    margin-left: 0;
 }
 .controls {
     width: fit-content;
-margin: 0 auto;
+    margin: 0 auto;
 }
 }
 @media (max-width: 768px) {
 .slider {
     margin-top: 4%;
+}
+.text-carousel {
+    font-size: 0.7em;
 }
 }
