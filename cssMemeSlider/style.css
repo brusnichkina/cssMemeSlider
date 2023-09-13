@@ -21,7 +21,7 @@ p {
 }
 .container {
     margin: 0 auto;
-    max-width: 75%;
+    max-width: 55%;
     overflow: hidden;
 }
 .header {
@@ -66,11 +66,12 @@ input[name="dot"] {
 .text {
     color: white;
     font-family: Inter;
-    font-size: 1.5em;
+    font-size: 1em;
     font-style: normal;
     font-weight: 300;
     letter-spacing: 0em;
     display: none;
+    opacity: 0;
 }
 .controls {
     width: fit-content;
@@ -92,7 +93,11 @@ input[name="dot"] {
     transition: all 0.4s ease;
 }
 .label:hover .label-style {
-    opacity: 0.8;
+    opacity: 0.3;
+    transform: scale(1.2);
+}
+.label:active .label-style {
+    opacity: 1;
     transform: scale(1.2);
 }
 #dot1:checked ~ .slider-footer .controls .label .dot-style1,
@@ -102,6 +107,7 @@ input[name="dot"] {
 {
     opacity: 0.8;
     transform: scale(1.2);
+    pointer-events: none;
 }
 #dot1:checked ~ .slider {
     margin-left: 0;
@@ -116,13 +122,22 @@ input[name="dot"] {
     margin-left: -300%;
 }
 #dot1:checked ~ .slider-footer .text-carousel .text1 {
-display: flex;
+    display: flex;
+    opacity: 1;
+    animation: myAnimation 1s;
 }
 #dot2:checked ~ .slider-footer .text-carousel .text2,
 #dot3:checked ~ .slider-footer .text-carousel .text3,
 #dot4:checked ~ .slider-footer .text-carousel .text4 {
     display: flex;
+    opacity: 1;
+    animation: myAnimation 1s;
 }
+@keyframes myAnimation {
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+ }
 @media (max-width: 850px) {
 .slide {
     width: 100%;
@@ -152,8 +167,5 @@ display: flex;
 @media (max-width: 768px) {
 .slider {
     margin-top: 4%;
-}
-.text-carousel {
-    font-size: 0.7em;
 }
 }
