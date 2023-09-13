@@ -20,16 +20,14 @@ p {
     margin: 0;
 }
 .container {
-    max-width: 800px;
     margin: 0 auto;
-    width: 100%;
+    max-width: 75%;
+    overflow: hidden;
 }
 .header {
     display: none;
 }
-.slider-wrapper {
-    overflow: hidden;
-}
+
 .slider {
     width: 400%;
     height: 100%;
@@ -40,11 +38,11 @@ p {
 .slide {
     width: 100%;
     display: flex;
-    margin-top: 40px;
+    margin-top: 4%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 70px;
-    padding: 0 20px;
+    border-radius: 10%;
+    padding: 0 2%;
     transition: all 1s ease;
 }
 .slide img {
@@ -56,42 +54,45 @@ input[name="dot"] {
 }
 .slider-footer {
     display: flex;
-    margin: 20px 20px;
+    margin: 5%;
     justify-content: space-between;
 }
 .text-carousel {
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 450px;
+    width: 70%;
 }
 .text {
     color: white;
     font-family: Inter;
-    font-size: 20px;
+    font-size: 1.5em;
     font-style: normal;
     font-weight: 300;
-    line-height: 30px;
-    letter-spacing: 1px;
+    letter-spacing: 0em;
     align-items: center; 
+    opacity: 0;
+    visibility: hidden;
 }
 .controls {
-    width: 188px;
-    height: 60px;
-    padding: 10px;
+    width: 28%;
+    height: 5%;
     margin-right: 0;
     margin-left: auto;
     display: inline-flex;
     flex-wrap: nowrap;
 }
+.label {
+    padding: 0.5rem;
+}
 .label-style {
-    height: 30px;
-    width: 30px;
-    margin: 6px;
+    height: 2rem;
+    width: 2rem;
     cursor: pointer;
     background-color: white;
     opacity: 0.5;
-    border-radius: 30px;
+    border-radius: 50%;
     transition: all 0.4s ease;
 }
 .label:hover .label-style {
@@ -118,49 +119,42 @@ input[name="dot"] {
 #dot4:checked ~ .slider {
     margin-left: -300%;
 }
-#dot1:checked ~ .slider-footer .text-carousel.text1 {
-    margin-left: 0;
+#dot1:checked ~ .slider-footer .text-carousel .text1 {
+    opacity: 1;
+    visibility: visible;
 }
-#dot2:checked ~ .slider {
-    margin-left: -100%;
+#dot2:checked ~ .slider-footer .text-carousel .text2,
+#dot3:checked ~ .slider-footer .text-carousel .text3,
+#dot4:checked ~ .slider-footer .text-carousel .text4 {
+    order: -1;
+    opacity: 1;
+    visibility: visible;
 }
-#dot3:checked ~ .slider {
-    margin-left: -200%;
-}
-#dot4:checked ~ .slider {
-    margin-left: -300%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 850px) {
 .slide {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 2%;
 }
-}
-@media (max-width: 768px) {
 .slider-footer {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    text-align: center;
 }
 .text-carousel {
     order: 1;
+    margin-top: 0em;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    font-size: 0.7em;
 }
 .controls {
-    margin-left: auto;
-    margin-right: auto;
+    width: fit-content;
+margin: 0 auto;
+}
+}
+@media (max-width: 768px) {
+.slider {
+    margin-top: 4%;
 }
 }
