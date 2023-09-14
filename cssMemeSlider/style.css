@@ -99,6 +99,7 @@ input[name="dot"] {
 .label:active .label-style {
     opacity: 1;
     transform: scale(1.2);
+    background-color: rgb(223, 148, 215);
 }
 #dot1:checked ~ .slider-footer .controls .label .dot-style1,
 #dot2:checked ~ .slider-footer .controls .label .dot-style2,
