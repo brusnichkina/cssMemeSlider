@@ -1,0 +1,176 @@
+@font-face {
+    font-family: Inter;
+    src: url(assets/RobotoMono-Light.ttf);
+    font-weight: 300;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth; 
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    background-color: #2f4f4f;
+}
+p {
+    margin: 0;
+}
+.container {
+    margin: 0 auto;
+    max-width: 55%;
+    overflow: hidden;
+}
+.header {
+    display: none;
+}
+.wrapper-all {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.slider {
+    width: 400%;
+    height: 100%;
+    display: flex;
+    transition: 1s;
+}
+.slide {
+    width: 100%;
+    display: flex;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    padding: 0 2%;
+    transition: all 1s ease;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+input[name="dot"] {
+    display: none;
+}
+.slider-footer {
+    display: flex;
+    justify-content: space-between;
+}
+.text-carousel {
+    display: flex;
+    align-items: center; 
+}
+.text {
+    color: white;
+    font-family: Inter;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0em;
+    display: none;
+    opacity: 0;
+}
+.controls {
+    width: fit-content;
+    height: 5%;
+    margin-right: 0;
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+.label {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.label-style {
+    height: 2rem;
+    width: 2rem;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+.label:hover .label-style {
+    opacity: 0.3;
+    transform: scale(1.2);
+}
+.label:active .label-style {
+    opacity: 1;
+    transform: scale(1.2);
+    background-color: rgb(223, 148, 215);
+}
+#dot1:checked ~ .slider-footer .controls .label .dot-style1,
+#dot2:checked ~ .slider-footer .controls .label .dot-style2,
+#dot3:checked ~ .slider-footer .controls .label .dot-style3,
+#dot4:checked ~ .slider-footer .controls .label .dot-style4
+{
+    opacity: 0.8;
+    transform: scale(1.2);
+}
+#dot1:checked ~ .slider {
+    margin-left: 0;
+}
+#dot2:checked ~ .slider {
+    margin-left: -100%;
+}
+#dot3:checked ~ .slider {
+    margin-left: -200%;
+}
+#dot4:checked ~ .slider {
+    margin-left: -300%;
+}
+#dot1:checked ~ .slider-footer .text-carousel .text1 {
+    display: flex;
+    opacity: 1;
+    animation: myAnimation 1s;
+}
+#dot2:checked ~ .slider-footer .text-carousel .text2,
+#dot3:checked ~ .slider-footer .text-carousel .text3,
+#dot4:checked ~ .slider-footer .text-carousel .text4 {
+    display: flex;
+    opacity: 1;
+    animation: myAnimation 1s;
+}
+@keyframes myAnimation {
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+ }
+@media (max-width: 850px) {
+.slide {
+    width: 100%;
+    margin-top: 2%;
+}
+.wrapper-all {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.slider-footer {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.text-carousel {
+    order: 1;
+    margin-left: 0;
+}
+.controls {
+    width: fit-content;
+    margin: 0 auto;
+}
+}
+@media (max-width: 768px) {
+.slider {
+    margin-top: 4%;
+}
+}
+@media (min-width: 1441px) {
+.container {
+    max-width: 40%;
+}
+}
